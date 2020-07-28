@@ -1,0 +1,143 @@
+:root {
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  --veryDarkBlue: hsl(234, 12%, 34%);
+  --grayishBlue: hsl(229, 6%, 66%);
+  --veryLightGray: hsl(0, 0%, 98%);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+}
+img {
+  max-width: 100%;
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin: auto;
+  padding: 0 1em;
+  display: grid;
+}
+
+.info {
+  text-align: center;
+  max-width: 500px;
+  margin: 25px auto;
+}
+
+.info .info__title {
+  font-weight: 200;
+  font-size: 2.4em;
+  color: var(--veryDarkBlue);
+}
+.info .info__title strong {
+  font-weight: 600;
+}
+
+.info .info__description {
+  font-weight: 400;
+  color: var(--grayishBlue);
+}
+
+.cards__grid {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 350px 350px 350px;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 25px;
+  grid-template-areas: '. two .'
+                       'one two four'
+                       'one three four'
+                       '. three .';
+  margin: 2em 0;
+}
+
+.cards__grid .card {
+  display: grid;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 20px 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.1);
+}
+.card h3 {
+  font-size: 1.1em;
+  color: var(--veryDarkBlue);
+  margin-bottom: 0;
+}
+.card p {
+  font-size: 0.9em;
+  color: var(--grayishBlue)
+}
+
+.card img {
+  margin: 0.5em 0;
+  width: 50px;
+  justify-self: end;
+}
+
+.one {
+  grid-area: one;
+}
+.two {
+  grid-area: two;
+}
+.three {
+  grid-area: three;
+}
+.four {
+  grid-area: four;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
+}
+.one::after {
+  background-color: var(--red);
+}
+.two::after {
+  background-color: var(--cyan);
+}
+.three::after {
+  background-color: var(--orange);
+}
+.four::after {
+  background-color: var(--blue);
+}
+
+@media screen and (max-width: 735px) {
+  .wrapper {
+    padding: 0;
+  }
+  .info .info__title { 
+    font-size: 1.8em;
+  }
+  .info .info__description { 
+    font-size: 1.1em;
+    max-width: 340px;
+  }
+  .cards__grid {
+    grid-template-columns: 340px;
+    grid-template-areas: 'one'
+                         'two'
+                         'three'
+                         'four';
+  }
+
+  .card h3 {
+    font-size: 1.2em
+  }
+  .card p {
+    font-size: 1em;
+  }
+}
