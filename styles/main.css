@@ -103,10 +103,10 @@ img {
   width: 100%;
 }
 .one::after {
-  background-color: var(--red);
+  background-color: var(--cyan);
 }
 .two::after {
-  background-color: var(--cyan);
+  background-color: var(--red);
 }
 .three::after {
   background-color: var(--orange);
